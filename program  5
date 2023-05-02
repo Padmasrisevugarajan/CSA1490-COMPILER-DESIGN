@@ -20,3 +20,16 @@ printf("Total number of lines : %d\n",newline);
 printf("Total number of characters : %d\n",characters); 
 return 0;
 }
+OUTPUT:
+int main()
+{
+int p;
+int a;
+p=a+d;
+d=b*e;
+)
+total number of words: 17
+total number of lines:7
+--------------------------------
+Process exited after 16.62 seconds with return value 0
+Press any key to continue . . .

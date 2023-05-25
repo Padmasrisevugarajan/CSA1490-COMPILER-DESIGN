@@ -1,0 +1,39 @@
+%{
+    int vow_count=0;
+    int const_count =0;
+%}
+ 
+%%
+[aeiouAEIOU] {vow_count++;}
+[a-zA-Z] {const_count++;}
+%%
+int yywrap(){}
+int main()
+{
+    printf("Enter the string of vowels and consonants:");
+    yylex();
+    printf("Number of vowels are:  %d\n", vow_count);
+    printf("Number of consonants are:  %d\n", const_count);
+    return 0;
+}
+
+output:
+Microsoft Windows [Version 10.0.18362.239]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\PADMASRI>cd Documents
+
+C:\Users\PADMASRI\Documents>lex 32.l
+
+C:\Users\PADMASRI\Documents>gcc -o 32 lex.yy.c
+
+C:\Users\PADMASRI\Documents>32.exe 32.c
+Enter the string of vowels and consonants:Vowel sounds allow the air to flow freely, causing the chin to drop noticeably, whilst consonant sounds are produced by restricting the air flow
+       ,      ,
+
+
+^Z
+Number of vowels are:  42
+Number of consonants are:  77
+
+C:\Users\PADMASRI\Documents>

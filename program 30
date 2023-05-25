@@ -1,0 +1,29 @@
+%%
+[1-9][0-9]{9} {printf("\nMobile Number Valid\n");}
+.+ {printf("\nMobile Number Invalid\n");}
+%%
+int main()
+{
+	printf("\nEnter Mobile Number : ");
+	yylex();
+	printf("\n");
+	return 0;
+}
+int yywrap()
+{ }
+
+output:
+Microsoft Windows [Version 10.0.18362.239]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\PADMASRI>cd Documents
+
+C:\Users\PADMASRI\Documents>lex 30.l
+
+C:\Users\PADMASRI\Documents>gcc -o 30 lex.yy.c
+
+C:\Users\PADMASRI\Documents>30.exe 30.c
+
+Enter Mobile Number : 9087654321
+
+Mobile Number Valid

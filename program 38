@@ -1,0 +1,28 @@
+%%
+((0[1-9])|([1-2][0-9])|(3[0-1]))\/((0[1-9])|(1[0-2]))\/(19[0-9]{2}|2[0-9]{3}) printf("Valid DoB");
+.* printf("Invalid DoB");
+%%
+
+int main()
+{
+ yylex();
+ return 0;
+}
+int yywrap()
+{}
+
+output:
+Microsoft Windows [Version 10.0.18362.239]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\PADMASRI>cd Documents
+
+C:\Users\PADMASRI\Documents>lex 38.l
+
+C:\Users\PADMASRI\Documents>gcc -o 38 lex.yy.c
+
+C:\Users\PADMASRI\Documents>38.exe 38.c
+07/03/2004
+Valid DoB
+22/88/2003
+Invalid DoB

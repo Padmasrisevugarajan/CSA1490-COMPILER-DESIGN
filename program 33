@@ -1,0 +1,28 @@
+%{
+int vow_count=0;
+%}
+%%
+[aeiouAEIOU] {vow_count++;}
+%%
+int yywrap(){}
+int main()
+{
+printf("Enter the string of vowels");
+yylex();
+printf("Number of vowels are:  %d\n", vow_count);
+return 0;
+}
+output:Microsoft Windows [Version 10.0.18362.239]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\PADMASRI>cd Documents
+
+C:\Users\PADMASRI\Documents>lex 33.l
+
+C:\Users\PADMASRI\Documents>gcc -o 33 lex.yy.c
+
+C:\Users\PADMASRI\Documents>33.exe 33.c
+Enter the string of vowels saveetha school of engineering
+ svth schl f ngnrng
+^Z
+Number of vowels are:  12

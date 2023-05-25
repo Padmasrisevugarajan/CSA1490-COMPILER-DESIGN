@@ -1,0 +1,32 @@
+%%
+[A-Z]+[\t\n ] { printf("%s is a capital word\n",yytext); }
+.  ;
+%%
+
+int main( ) 
+{
+	printf("Enter String :\n");
+	yylex();
+}
+int yywrap( )
+{
+	return 1;
+}
+
+
+output:
+Microsoft Windows [Version 10.0.18362.239]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\PADMASRI>cd Documents
+
+C:\Users\PADMASRI\Documents>lex 27.l
+
+C:\Users\PADMASRI\Documents>gcc -o 27 lex.yy.c
+
+C:\Users\PADMASRI\Documents>27.exe 27.c
+Enter String :
+SAVEETHA school of ENGINEERING
+SAVEETHA  is a capital word
+ENGINEERING
+ is a capital word

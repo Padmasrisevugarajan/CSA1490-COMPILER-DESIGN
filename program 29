@@ -1,0 +1,41 @@
+%{
+int i;
+%}
+%%
+[a-z A-Z]* { for(i=0;i<=yyleng;i++) 
+              { if((yytext[i]=='a')&&(yytext[i+1]=='b')&&(yytext[i+2]=='c'))
+                { yytext[i]='A';
+                  yytext[i+1]='B';
+                  yytext[i+2]='C';
+                }
+              }
+             printf("%s",yytext);
+            }
+
+[\t]* return 1;
+.* {ECHO;}
+\n {printf("%s",yytext);}
+%%
+int main()
+{
+yylex();
+}
+int yywrap()
+{
+return 1;
+}
+
+
+output:
+Microsoft Windows [Version 10.0.18362.239]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\PADMASRI>cd Documents
+
+C:\Users\PADMASRI\Documents>lex 29.l
+
+C:\Users\PADMASRI\Documents>gcc -o 29 lex.yy.c
+
+C:\Users\PADMASRI\Documents>29.exe 29.c
+abcdefghabcijkla
+ABCdefghABCijkla
